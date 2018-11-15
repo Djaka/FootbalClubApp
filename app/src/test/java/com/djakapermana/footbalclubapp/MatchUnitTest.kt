@@ -3,12 +3,20 @@ package com.djakapermana.footbalclubapp
 import com.djakapermana.footbalclubapp.helper.GeneralFunctions
 import com.djakapermana.footbalclubapp.interfaces.IMatch
 import junit.framework.Assert.assertEquals
+import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
+import org.mockito.MockitoAnnotations
 import org.mockito.junit.MockitoJUnitRunner
 
 @RunWith(MockitoJUnitRunner.StrictStubs::class)
 class MatchUnitTest {
+
+    @Before
+    fun init(){
+        MockitoAnnotations.initMocks(this)
+    }
+
     @Test
     fun loadDataLastMatch() {
         val macth: IMatch = GeneralFunctions.retrofit.create(IMatch::class.java)
